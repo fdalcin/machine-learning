@@ -1,0 +1,26 @@
+Simple KMeans
+
+Clustered Instances
+0      168 ( 40%)
+1      255 ( 60%)
+
+Cluster 0 <-- Evadido
+Cluster 1 <-- Ativo
+
+Incorrectly clustered instances :	64.0	 15.13   %
+
+Expectation Maximization
+
+Clustered Instances
+0      204 ( 48%)
+1      109 ( 26%)
+2      110 ( 26%)
+
+Cluster 0 <-- Ativo
+Cluster 1 <-- No class
+Cluster 2 <-- Evadido
+
+Incorrectly clustered instances :	155.0	 36.643  %
+
+
+Conforme os experimentos realizados, pode-se perceber que o método Simple KMeans obteve uma melhor aplicação ao caso das notas, uma vez que o método Expectation Maximization não foi capaz de classificar 109 instâncias (26%). O método EM também classificou incorretamente 155 registros (36,64%) contra 64 registros (15,13%) do método Simple KMeans.

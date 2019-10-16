@@ -1,0 +1,740 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.EM -I 100 -N -1 -X 10 -max -1 -ll-cv 1.0E-6 -ll-iter 1.0E-6 -M 1.0E-6 -K 10 -num-slots 1 -S 100
+Relation:     notas
+Instances:    423
+Attributes:   173
+              [list of attributes omitted]
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+EM
+==
+
+Number of clusters selected by cross validation: 3
+Number of iterations performed: 1
+
+
+                                                          Cluster
+Attribute                                                       0         1         2
+                                                           (0.39)    (0.34)    (0.28)
+======================================================================================
+GENERO
+  M                                                       148.1599  129.6302  101.2099
+  F                                                        17.0007   14.9993        18
+  [total]                                                 165.1606  144.6295  119.2099
+ADMINISTRACAO
+  mean                                                        8.15      8.15      8.15
+  std. dev.                                                 0.0946    0.1627    0.0946
+
+ALGORITMOS_DE_PROGRAMACAO
+  mean                                                      3.9558    3.9558    3.9558
+  std. dev.                                                 0.0018    2.7826    1.6177
+
+ALGORITMOS_DE_PROGRAMACAO_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ALGORITMOS_DE_PROGRAMACAO_II
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ALGORITMOS_E_PROGRAMACAO_DE_COMPUTADORES
+  mean                                                      4.8751    4.8749     4.875
+  std. dev.                                                 0.0161     0.251    0.1463
+
+ANALISE_E_PROJETO_DE_SISTEMAS
+  mean                                                      6.5066    5.6847    6.1232
+  std. dev.                                                 0.8905    1.8699    1.2689
+
+ANALISE_E_PROJETO_DE_SISTEMAS_I
+  mean                                                         5.5       5.5       5.5
+  std. dev.                                                      0         0         0
+
+ANATOMIA_GERAL_E_PRIMEIROS_SOCORROS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ANATOMIA_VETERINARIA_
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ANTROPOLOGIA_E_SOCIOLOGIA
+  mean                                                       4.375     4.375     4.375
+  std. dev.                                                      0         0         0
+
+ANTROPOLOGIA_SOCIOLOGIA_E_SAUDE_DO_AMBIENTE_
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+APLICATIVOS_MOVEIS
+  mean                                                      6.5473     3.326    0.0153
+  std. dev.                                                 2.2116    1.7825    0.1031
+
+ARQUITETURA_DE_COMPUTADORES
+  mean                                                      5.8882    3.4521    0.0288
+  std. dev.                                                 1.7905    1.5266    0.1443
+
+ARQUITETURA_DE_REFERENCIA_PARA_OS_NEGOCIOS
+  mean                                                       7.889    7.6954    7.7987
+  std. dev.                                                 0.4529    1.2158    0.7653
+
+ARQUITETURA_E_ORGANIZACAO_DE_COMPUTADORES
+  mean                                                       5.019     5.019     5.019
+  std. dev.                                                      0    1.7851    1.0378
+
+ATIVIDADE_FISICA_E_APTIDAO_FISICA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ATIVIDADES_AQUATICAS_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ATIVIDADES_GINASTICAS_-_ARTISTICA_E_RITMICA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ATIVIDADES_RITMICAS_E_DANCA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+BANCO_DE_DADOS
+  mean                                                      7.0952    6.3128    6.7303
+  std. dev.                                                 0.8601    1.9978    1.3211
+
+BANCO_DE_DADOS_I
+  mean                                                      7.7417    7.7417    7.7417
+  std. dev.                                                 0.2031    0.3493    0.2031
+
+BEM_ESTAR_ANIMAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+BIOLOGIA_CELULAR_HISTOLOGIA_E_EMBRIOLOGIA_VETERINARIA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+BIOQUIMICA_VETERINARIA_
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+BIOTERISMO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+BUSINESS_ANALYTICS
+  mean                                                       8.631    8.6601    8.6446
+  std. dev.                                                 0.2379    0.4258    0.2887
+
+CALCULO_DIFERENCIAL_E_INTEGRAL
+  mean                                                      2.4405    2.4374    2.4442
+  std. dev.                                                 0.0037    0.0866    0.0396
+
+CALCULO_DIFERENCIAL_E_INTEGRAL_I
+  mean                                                      2.5299    2.5664    2.5169
+  std. dev.                                                 0.2168    0.1755    0.2335
+
+CALCULO_DIFERENCIAL_E_INTEGRAL_II
+  mean                                                      5.0667    5.0667    5.0667
+  std. dev.                                                      0         0         0
+
+CIENCIA_DOS_MATERIAIS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+COMPORTAMENTO_HUMANO_NAS_ORGANIZAC�ES
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+COMPUTACAO_GRAFICA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+COMUNICACAO_E_CULTURA_DIGITAL
+  mean                                                         8.5       8.5       8.5
+  std. dev.                                                      0         0         0
+
+COMUNICACAO_E_EXPRESSAO
+  mean                                                      5.4624    4.2705    4.8846
+  std. dev.                                                 1.4604    2.6961    0.1702
+
+COMUNICACAO_EMPRESARIAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+COMUNICACAO_EMPRESARIAL_E_PROFISSIONAL
+  mean                                                       5.075     5.075     5.075
+  std. dev.                                                      0         0         0
+
+COMUNICACAO_INSTITUCIONAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+COMUNICACAO_PROFISSIONAL
+  mean                                                        1.85      1.85      1.85
+  std. dev.                                                 0.2206    0.3794    0.2206
+
+CONTABILIDADE_BASICA_E_GESTAO_DE_CUSTOS
+  mean                                                      0.7167    0.7167    0.7167
+  std. dev.                                                 0.0855     0.147    0.0855
+
+CONTABILIDADE_E_ANALISE_DE_CUSTOS
+  mean                                                         3.7       3.7       3.7
+  std. dev.                                                      0         0         0
+
+CRIATIVIDADE_E_EXPRESSAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+CULTURA_STARTUP
+  mean                                                      7.8102    7.8181    7.8139
+  std. dev.                                                 0.1339    0.2068    0.1463
+
+DEONTOLOGIA_E_ETICA_PROFISSIONAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+DESENHO_TECNICO
+  mean                                                      5.6389    5.6554    5.6187
+  std. dev.                                                 0.1625     0.197    0.2172
+
+DESENVOLVIMENTO_DE_SISTEMAS_COM_PHP
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+DESENVOLVIMENTO_DE_SOFTWARE
+  mean                                                      6.7109     4.014    0.0244
+  std. dev.                                                 2.1357    1.8965    0.1969
+
+DESENVOLVIMENTO_E_APRENDIZAGEM_MOTORA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+DESENVOLVIMENTO_GERENCIAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+DESENVOLVIMENTO_PESSOAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+DESIGN_DE_INTERACAO
+  mean                                                      7.6079    4.8771    0.1257
+  std. dev.                                                 1.1915    1.6443    0.5518
+
+DIREITO_E_LINGUAGEM
+  mean                                                         2.9       2.9       2.9
+  std. dev.                                                      0         0         0
+
+DIREITO_E_PSICOLOGIA
+  mean                                                           4         4         4
+  std. dev.                                                      0         0         0
+
+ECONOMIA_E_NEGOCIOS_INTERNACIONAIS
+  mean                                                        2.35      2.35      2.35
+  std. dev.                                                 0.2319    0.3989    0.2319
+
+ELETRICIDADE
+  mean                                                      2.0563     2.081    2.0435
+  std. dev.                                                 0.1898    0.3686    0.1896
+
+ELETRICIDADE_E_ELETROMAGNETISMO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ELETRONICA_ANALOGICA
+  mean                                                        3.72      3.72      3.72
+  std. dev.                                                      0         0         0
+
+ELETRONICA_DIGITAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+EMPREENDEDORISMO_E_PLANO_DE_NEGOCIOS
+  mean                                                         5.4       5.4       5.4
+  std. dev.                                                      0         0         0
+
+EMPREENDEDORISMO_I
+  mean                                                      1.2667    1.2667    1.2667
+  std. dev.                                                  0.151    0.2598     0.151
+
+ENGENHARIA_DE_SOFTWARE
+  mean                                                      4.4974     4.617    4.5532
+  std. dev.                                                  0.501    1.6989    1.0369
+
+EPISTEMOLOGIA_FILOSOFIA_POLITICA_E_TEORIAS_DA_JUSTICA
+  mean                                                       5.175     5.175     5.175
+  std. dev.                                                      0         0         0
+
+ESPORTE_COLETIVO_-_BASQUETE
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ESPORTE_COLETIVO_-_HANDEBOL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ESPORTE_COLETIVO_-_VOLEIBOL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ESTATISTICA
+  mean                                                      6.4929    6.4929    6.4929
+  std. dev.                                                 0.2825    0.4859    0.2825
+
+ESTRATEGIAS_DE_PRODUCAO_INDUSTRIAL
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+ESTRUTURA_DE_DADOS_I
+  mean                                                        7.67      7.67      7.67
+  std. dev.                                                 0.0873    0.1501    0.0873
+
+ESTRUTURA_DE_DADOS_II
+  mean                                                        5.76      5.76      5.76
+  std. dev.                                                 0.2437    0.4191    0.2437
+
+FILOSOFIA_E_ETICA
+  mean                                                      5.0714    5.1457    5.1061
+  std. dev.                                                 1.1333    1.3793     1.068
+
+FISICA_A
+  mean                                                      1.7833    1.7857    1.7805
+  std. dev.                                                 0.0005    0.0229    0.0307
+
+FISICA_I
+  mean                                                      1.5169     1.544    1.5116
+  std. dev.                                                  0.121    0.2783    0.1402
+
+FISICA_II
+  mean                                                         3.9       3.9       3.9
+  std. dev.                                                      0         0         0
+
+FISICA_PARA_JOGOS_DIGITAIS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+FISIOLOGIA_HUMANA_E_BIOQUIMICA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+FOTOJORNALISMO
+  mean                                                       8.325     8.325     8.325
+  std. dev.                                                      0         0         0
+
+FUNDAMENTOS_DA_ADMINISTRACAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+FUNDAMENTOS_DA_ENGENHARIA_DE_PRODUCAO
+  mean                                                         8.5       8.5       8.5
+  std. dev.                                                      0         0         0
+
+FUNDAMENTOS_DA_MATEMATICA
+  mean                                                      1.7433    1.7897    1.7649
+  std. dev.                                                 0.1942    0.2937    0.2101
+
+FUNDAMENTOS_DE_ADMINISTRACAO
+  mean                                                      6.3828    6.4445    6.4115
+  std. dev.                                                 0.8298    0.8376    0.7099
+
+FUNDAMENTOS_DE_SISTEMAS_DE_INFORMACAO
+  mean                                                      6.0909    6.1714    6.1284
+  std. dev.                                                 0.4783    1.5511    0.9502
+
+GENETICA_APLICADA_�_MEDICINA_VETERINARIA_
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+GEOMETRIA_ANALITICA_E_ALGEBRA_LINEAR
+  mean                                                      3.7375    3.7375    3.7375
+  std. dev.                                                      0         0         0
+
+GESTAO_COMERCIAL
+  mean                                                      2.9187    2.9187    2.9187
+  std. dev.                                                 0.2859    0.4918    0.2859
+
+GESTAO_DE_PROJETOS
+  mean                                                      7.6254     7.503    7.5683
+  std. dev.                                                 0.3807    0.8608     0.556
+
+GESTAO_DE_SISTEMAS_DE_INFORMACAO
+  mean                                                         8.5       8.5       8.5
+  std. dev.                                                 0.0989    0.1701    0.0989
+
+GESTAO_ESTRATEGICA_DE_EMPREENDIMENTOS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+GOVERNANCA_DE_TI
+  mean                                                      7.6521    7.6475      7.65
+  std. dev.                                                 0.0408     0.302    0.1774
+
+HISTORIA_CONTEMPORANEA_DO_BRASIL
+  mean                                                         8.9       8.9       8.9
+  std. dev.                                                      0         0         0
+
+HISTORIA_DA_ARTE_E_DA_CULTURA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+HISTORIA_DA_COMUNICACAO
+  mean                                                       8.575     8.575     8.575
+  std. dev.                                                      0         0         0
+
+HUMANIDADES
+  mean                                                      6.9012    6.9076    6.9042
+  std. dev.                                                 0.1639    0.0339    0.1038
+
+INFRAESTRUTURA_TECNOLOGICA
+  mean                                                      5.8248    4.4265    5.1726
+  std. dev.                                                 1.3571    1.7975    1.4686
+
+INTRODUCAO_�_ENGENHARIA
+  mean                                                       8.375     8.375     8.375
+  std. dev.                                                      0         0         0
+
+INTRODUCAO_�_ENGENHARIA_
+  mean                                                      4.5528    4.5787    4.5112
+  std. dev.                                                 0.0351    0.3066    0.4185
+
+INTRODUCAO_�_ENGENHARIA_DA_COMPUTACAO
+  mean                                                       1.852    1.9013     1.875
+  std. dev.                                                 0.2063    0.4958    0.3162
+
+INTRODUCAO_�_MEDICINA_VETERINARIA_E_ZOOTECNIA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+INTRODUCAO_�_PROGRAMACAO
+  mean                                                      4.3747    4.3747    4.3747
+  std. dev.                                                 0.0024    2.9309    1.7039
+
+INTRODUCAO_AO_JORNALISMO_E_LEGISLACAO
+  mean                                                        8.45      8.45      8.45
+  std. dev.                                                      0         0         0
+
+JORNALISMO_DIGITAL_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+JORNALISMO_GRAFICO_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LIBRAS
+  mean                                                      6.8169    6.7858    6.8024
+  std. dev.                                                 0.5846     0.425    0.4397
+
+LINGUA_PORTUGUESA_I
+  mean                                                        8.45      8.45      8.45
+  std. dev.                                                      0         0         0
+
+LINGUA_PORTUGUESA_II
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LINGUAGEM_DE_PROGRAMACAO_EM_C
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LINGUAGEM_DE_PROGRAMACAO_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LINGUAGEM_DE_PROGRAMACAO_II
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LOCALIZACAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LOCALIZACAO_AVANCADA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+LOGICA_MATEMATICA
+  mean                                                      3.8602    3.8597      3.86
+  std. dev.                                                 0.0295    0.6045    0.3519
+
+LOGICA_MATEMATICA_I
+  mean                                                      4.3006    4.3006    4.3006
+  std. dev.                                                 0.0018    2.6725    1.5537
+
+LOGICA_MATEMATICA_II
+  mean                                                      4.5306    4.5306    4.5306
+  std. dev.                                                      0      1.89    1.0988
+
+MARKETING_E_GESTAO_DE_QUALIDADE_EM_HOSPITALIDADE
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+MATEMATICA
+  mean                                                      6.1425     3.649    0.0671
+  std. dev.                                                 1.6057    1.4074    0.2678
+
+MATEMATICA_APLICADA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+MATEMATICA_APLICADA_AOS_NEGOCIOS
+  mean                                                         3.1       3.1       3.1
+  std. dev.                                                      0         0         0
+
+MATEMATICA_DISCRETA
+  mean                                                      3.4057    3.4057    3.4057
+  std. dev.                                                 0.0006    2.1751    1.2645
+
+MEDIC�ES_E_CALIBRACAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+METODOLOGIA_CIENTIFICA
+  mean                                                   1653.0779  331.7952 1024.6883
+  std. dev.                                              2455.4819  939.2841   94.3304
+
+METODOLOGIA_DE_PROJETOS
+  mean                                                      1.7667    1.7667    1.7667
+  std. dev.                                                 0.2107    0.3623    0.2107
+
+METODOLOGIA_DO_TRABALHO_ACADEMICO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+METODOS_QUANTITATIVOS_I
+  mean                                                      1.0333    1.0333    1.0333
+  std. dev.                                                 0.1232    0.2119    0.1232
+
+NOVO_AMBIENTE_ORGANIZACIONAL
+  mean                                                      6.9605    6.3923    6.6954
+  std. dev.                                                 0.8365    1.8543     1.221
+
+NUTRICAO_E_DIETETICA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+OFICINA_DE_BANCO_DE_DADOS
+  mean                                                           9         9         9
+  std. dev.                                                 0.1377    0.2368    0.1377
+
+OFICINA_DE_MATEMATICA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+OFICINA_DE_PROGRAMACAO_I
+  mean                                                       4.761     4.761     4.761
+  std. dev.                                                      0    1.8126    1.0538
+
+OFICINA_DE_PROGRAMACAO_II
+  mean                                                         6.6       6.6       6.6
+  std. dev.                                                 0.2539    0.4367    0.2539
+
+ORIENTACAO_A_OBJETOS
+  mean                                                      4.4318    3.3501    3.9273
+  std. dev.                                                 1.9845    1.8397    1.6964
+
+PESSOAS_BENS_E_NEGOCIO_JURIDICO
+  mean                                                           3         3         3
+  std. dev.                                                      0         0         0
+
+PLANEJAMENTO_ARQUITETONICO_E_MANUTENCAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+PLANEJAMENTO_E_ORGANIZACAO_DE_EVENTOS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+PLANEJAMENTO_GRAFICO
+  mean                                                        8.05      8.05      8.05
+  std. dev.                                                      0         0         0
+
+POLITICA_ESTADO_E_CONSTITUICAO
+  mean                                                        6.25      6.25      6.25
+  std. dev.                                                      0         0         0
+
+PRATICAS_DE_COZINHA_E_PRODUCAO_DE_ALIMENTOS_E_BEBIDAS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+PRE-CALCULO
+  mean                                                         0.6    0.6042    0.5949
+  std. dev.                                                 0.0015    0.0372    0.0552
+
+PRODUCAO_MULTIMIDIA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+PROGRAMACAO_DE_COMPUTADORES
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+PROGRAMACAO_E_CALCULO_NUMERICO
+  mean                                                       4.775     4.775     4.775
+  std. dev.                                                      0         0         0
+
+PROGRAMACAO_I
+  mean                                                      2.9146    2.9662    2.9041
+  std. dev.                                                 0.2332    1.9401    0.2694
+
+PROGRAMACAO_II
+  mean                                                      7.1083    7.1083    7.1083
+  std. dev.                                                 0.2256     0.388    0.2256
+
+QUIMICA_TECNOLOGICA
+  mean                                                      3.9703     4.078    4.0165
+  std. dev.                                                 0.4429    0.3758    0.0317
+
+RACIOCINIO_LOGICO
+  mean                                                      6.6645    3.8298     0.103
+  std. dev.                                                 1.4437    1.4724    0.3737
+
+RADIOJORNALISMO_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+REDACAO_JORNALISTICA
+  mean                                                       8.125     8.125     8.125
+  std. dev.                                                      0         0         0
+
+REDE_DE_COMPUTADORES_I
+  mean                                                         5.6       5.6       5.6
+  std. dev.                                                      0         0         0
+
+REDES_DE_COMPUTADORES
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+REPRESENTACAO_E_MODELAMENTO_GEOMETRICO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+SAUDE_PUBLICA_APLICADA_�_MEDICINA_VETERINARIA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+SEGURANCA_E_HIGIENE_DE_ALIMENTOS
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+SISTEMAS_CONVERGENTES
+  mean                                                      7.4471    7.1141    7.2918
+  std. dev.                                                 0.5516    1.0276    0.7032
+
+SISTEMAS_CORPORATIVOS
+  mean                                                      8.3345    8.2816    8.3098
+  std. dev.                                                 0.4277    0.8593    0.5664
+
+SISTEMAS_DE_INFORMACAO
+  mean                                                      8.2843    5.5804    0.1392
+  std. dev.                                                 0.8753    1.6189    0.8664
+
+SISTEMAS_EMBARCADOS
+  mean                                                      6.8182    6.4022    6.6242
+  std. dev.                                                    0.9    1.3382    0.9745
+
+SISTEMAS_EMBARCADOS_I_
+  mean                                                         2.7       2.7       2.7
+  std. dev.                                                      0         0         0
+
+SISTEMAS_FINANCEIROS
+  mean                                                         7.6       7.6       7.6
+  std. dev.                                                      0         0         0
+
+SISTEMAS_OPERACIONAIS
+  mean                                                      6.9063    6.4704     6.703
+  std. dev.                                                 0.6238    1.1947    0.8168
+
+SISTEMAS_OPERACIONAIS_I
+  mean                                                         7.4       7.4       7.4
+  std. dev.                                                 0.0275    0.0474    0.0275
+
+SISTEMAS_OPERACIONAIS_II
+  mean                                                         9.6       9.6       9.6
+  std. dev.                                                      0         0         0
+
+SOCIOLOGIA_DA_COMUNICACAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+TECNICA_HOSPITALAR_VETERINARIA
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+TECNICAS_DE_APURACAO
+  mean                                                       9.025     9.025     9.025
+  std. dev.                                                      0         0         0
+
+TECNICAS_DE_SERVICO_EM_HOSPITALIDADE
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+TELEJORNALISMO_I
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+TEORIA_E_HISTORIA_DO_DIREITO
+  mean                                                           7         7         7
+  std. dev.                                                      0         0         0
+
+TEORIA_GERAL_DA_ADMINISTRACAO
+  mean                                                       3.944     3.944     3.944
+  std. dev.                                                 0.0007    2.3957    1.3928
+
+TEORIAS_DA_COMUNICACAO
+  mean                                                           0         0         0
+  std. dev.                                                      0         0         0
+
+TOPICOS_ESPECIAIS_EM_SOFTWARE
+  mean                                                      7.5821    7.5764    7.5794
+  std. dev.                                                 0.2883    0.1403     0.197
+
+TOPOGRAFIA
+  mean                                                      2.2375    2.2375    2.2375
+  std. dev.                                                      0         0         0
+
+TRABALHO_DE_CONCLUSAO_DE_CURSO
+  mean                                                      7.2838    7.2917    7.2875
+  std. dev.                                                 0.3307    0.8716    0.5469
+
+TRABALHO_DE_ENGENHARIA_DA_COMPUTACAO
+  mean                                                      7.8375    7.8374    7.8375
+  std. dev.                                                  0.006     0.093    0.0542
+
+TRABALHO_INTERDISCIPLINAR_I
+  mean                                                         8.9       8.9       8.9
+  std. dev.                                                 0.0871    0.1498    0.0871
+
+
+
+Time taken to build model (full training data) : 5.2 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      204 ( 48%)
+1      109 ( 26%)
+2      110 ( 26%)
+
+
+Log likelihood: 1290.53808
+
+
+Class attribute: Situacao
+Classes to Clusters:
+
+   0   1   2  <-- assigned to cluster
+  43  48 107 | Evadido
+ 161  61   3 | Ativo
+
+Cluster 0 <-- Ativo
+Cluster 1 <-- No class
+Cluster 2 <-- Evadido
+
+Incorrectly clustered instances :	155.0	 36.643  %
+

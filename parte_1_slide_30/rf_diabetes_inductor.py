@@ -1,15 +1,9 @@
-import pandas
-import config
 from MachineLearning import MachineLearning
+from parte_1_slide_30.common import get_inductor_params
 
 machine_learning = MachineLearning()
 
-data = pandas.read_csv(config.DATA_PATH + 'diabetes.csv')
-
-attributes = data.drop('class', axis=1)
-classes = data['class']
-
-print(classes.value_counts())
+attributes, classes = get_inductor_params()
 
 # LOGISTIC REGRESSION
 filename = 'diabetes_rf'

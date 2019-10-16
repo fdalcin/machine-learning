@@ -22,31 +22,31 @@ NVN / (NVN + NFP)
 
 #### Acurácia do modelo
 Accuracy **1.00**
-Model score **99.94%**
+Model score **99.98%**
 
 #### Função gerada pelo modelo
 Foi utilizado o modelo de **Decision Tree**
 
 #### Sensibilidade
-1600 / (1600 + 8) = **0.9950** = **99.5%**
+2362 / (2362 + 8) = **0.9966** = **99.6%**
 
 #### Especificidade
-1569 / (1569 + 0) = **1.00** = **100%**
+2395 / (2395 + 0) = **1.00** = **100%**
 
 #### Acurácia do modelo de função logística
-Accuracy **0.99**
-Model score **98.39%**
+Accuracy **0.98**
+Model score **98.70%**
 
 #### Confusion Matrix
 
 ##### Logistic Regression
 |  |  |
 | :---: | :---: |
-| 1556 | 46 |
-| 0 | 1575 |
+| 2323 | 73 |
+| 0 | 2369 |
 
 ##### Decision Tree
 |  |  |
 | :---: | :---: |
-| 1600 | 8 |
-| 0 | 1569 |
+| 2362 | 8 |
+| 0 | 2395 |

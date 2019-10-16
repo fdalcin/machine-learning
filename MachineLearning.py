@@ -40,7 +40,7 @@ def _classification_report(test, evaluation):
 
 
 class MachineLearning:
-    def __init__(self, test_size=0.20, solver='liblinear'):
+    def __init__(self, test_size=0.30, solver='liblinear'):
         self.solver = solver
         self.test_size = test_size
 

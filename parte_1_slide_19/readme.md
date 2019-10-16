@@ -23,7 +23,6 @@ Portanto, trata-se de um tratamento caro e de longo prazo e prever o risco de re
 | :--- | :---: | :---: | :---: | :---: |
 | N | 1.00 | 0.97 | 0.99 | 2396 |
 | Y |  0.97 | 1.00 | 0.98 | 2369 |
-|  |
 | accuracy |  |  | 0.98 | 4765 |
 | macro avg | 0.99 | 0.98 | 0.98 | 4765 |
 | weighted avg | 0.99 | 0.98 | 0.98 | 4765 |

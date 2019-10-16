@@ -65,7 +65,7 @@ Cross validate score
 Mean precision: **0.7188492063492065**
 
 #### Algoritmo selecionado
-Foi selecionado o modelo de **Regressão Logística** apresentado anteriormente (resultados na pasta **parte_1_slide_18**), uma vez que o mesmo apresentou uma melhor acurácia.
+Foi selecionado o modelo de **Regressão Logística** apresentado anteriormente - **[parte_1_slide_18](https://github.com/fdalcin/machine-learning/tree/master/parte_1_slide_18)**), uma vez que o mesmo apresentou uma melhor acurácia.
 
 #### Acurácia do modelo
 O modelo de **Regressão Logística** apresentou acurácia de **81%**. 

@@ -1,8 +1,6 @@
 ## Atividade
 
-- Construir um sistema classificador para os dados do arquivo winequality.
-
-[Wine quality data](https://archive.ics.uci.edu/ml/datasets/wine+quality)
+- Construir um sistema classificador para os dados do arquivo winequality. [Wine quality data](https://archive.ics.uci.edu/ml/datasets/wine+quality)
 
 - Comparar SVM com outro método classificador e comparar as acurácias obtidas.
 
@@ -27,7 +25,6 @@
 | A_WINE | 0.74 | 0.82 | 0.78 | 395 |
 | B_WINE | 0.80 | 0.65 | 0.72 | 440 |
 | C_WINE | 0.90 | 1.00 | 0.95 | 392 |
-| |
 | accuracy |  |  | 0.81 | 1227 |
 | macro avg | 0.81 | 0.82 | 0.81 | 1227 |
 | weighted avg | 0.81 | 0.81 | 0.81 | 1227 |
@@ -57,7 +54,6 @@ Mean precision: **0.8190135948062778**
 | A_WINE | 0.74 | 0.62 | 0.67 | 415 |
 | B_WINE | 0.51 | 0.61 | 0.56 | 394 |
 | C_WINE | 0.69 | 0.68 | 0.68 | 418 |
-| |
 | accuracy |  |  | 0.63 | 1227 |
 | macro avg | 0.65 | 0.63 | 0.64 | 1227 |
 | weighted avg | 0.65 | 0.63 | 0.64 | 1227 |
@@ -87,7 +83,6 @@ Mean precision: **0.5918733850129198**
 | A_WINE | 0.95 | 1.00 | 0.98 | 418 |
 | B_WINE | 1.00 | 0.94 | 0.97 | 405 |
 | C_WINE | 0.99 | 1.00 | 1.00 | 404 |
-| |
 | accuracy |  |  | 0.98 | 1227 |
 | macro avg | 0.98 | 0.98 | 0.98 | 1227 |
 | weighted avg | 0.98 | 0.98 | 0.98 | 1227 |

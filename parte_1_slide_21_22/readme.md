@@ -21,7 +21,7 @@ NVN / (NVN + NFP)
 ## Resultados
 
 #### Acurácia do modelo
-Accuracy **1.00**
+Accuracy **1.00**  
 Model score **99.98%**
 
 #### Função gerada pelo modelo
@@ -34,7 +34,7 @@ Foi utilizado o modelo de **Decision Tree**
 2395 / (2395 + 0) = **1.00** = **100%**
 
 #### Acurácia do modelo de função logística
-Accuracy **0.98**
+Accuracy **0.98**  
 Model score **98.70%**
 
 #### Confusion Matrix

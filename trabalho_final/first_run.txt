@@ -1,0 +1,109 @@
+         age  gender  height  weight  ap_hi  ...  gluc  smoke  alco  active  cardio
+0      18393       2     168    62.0    110  ...     1      0     0       1       N
+1      20228       1     156    85.0    140  ...     1      0     0       1       Y
+2      18857       1     165    64.0    130  ...     1      0     0       0       Y
+3      17623       2     169    82.0    150  ...     1      0     0       1       Y
+4      17474       1     156    56.0    100  ...     1      0     0       0       N
+...      ...     ...     ...     ...    ...  ...   ...    ...   ...     ...     ...
+69995  19240       2     168    76.0    120  ...     1      1     0       1       N
+69996  22601       1     158   126.0    140  ...     2      0     0       1       Y
+69997  19066       2     183   105.0    180  ...     1      0     1       0       Y
+69998  22431       1     163    72.0    135  ...     2      0     0       0       Y
+69999  20540       1     170    72.0    120  ...     1      0     0       1       N
+
+[70000 rows x 12 columns]
+
+Verificando se há problema de balanceamento nas classes
+N    35021
+Y    34979
+Name: cardio, dtype: int64
+
+Gerando modelo de Decision Tree
+
+Confusion matrix
+[[6707 3872]
+ [3729 6692]]
+
+Classification report
+              precision    recall  f1-score   support
+
+           N       0.64      0.63      0.64     10579
+           Y       0.63      0.64      0.64     10421
+
+    accuracy                           0.64     21000
+   macro avg       0.64      0.64      0.64     21000
+weighted avg       0.64      0.64      0.64     21000
+
+Model '/Users/fdalcin/PycharmProjects/machine-learning/model/cardio_dt.sav' created with 30.0% training set size.
+
+Gerando modelo de Logistic Regression
+
+Confusion matrix
+[[7854 2674]
+ [3524 6948]]
+
+Classification report
+              precision    recall  f1-score   support
+
+           N       0.69      0.75      0.72     10528
+           Y       0.72      0.66      0.69     10472
+
+    accuracy                           0.70     21000
+   macro avg       0.71      0.70      0.70     21000
+weighted avg       0.71      0.70      0.70     21000
+
+Model '/Users/fdalcin/PycharmProjects/machine-learning/model/cardio_lr.sav' created using liblinear with 30.0% training set size.
+
+Gerando modelo de Random Forest
+
+Confusion matrix
+[[7703 2829]
+ [3114 7354]]
+
+Classification report
+              precision    recall  f1-score   support
+
+           N       0.71      0.73      0.72     10532
+           Y       0.72      0.70      0.71     10468
+
+    accuracy                           0.72     21000
+   macro avg       0.72      0.72      0.72     21000
+weighted avg       0.72      0.72      0.72     21000
+
+Model '/Users/fdalcin/PycharmProjects/machine-learning/model/cardio_rf.sav' created with 30.0% training set size.
+
+Gerando modelo de SVM Kernel Linear
+
+Confusion matrix
+[[8152 2306]
+ [3526 7016]]
+
+Classification report
+              precision    recall  f1-score   support
+
+           N       0.70      0.78      0.74     10458
+           Y       0.75      0.67      0.71     10542
+
+    accuracy                           0.72     21000
+   macro avg       0.73      0.72      0.72     21000
+weighted avg       0.73      0.72      0.72     21000
+
+Model '/Users/fdalcin/PycharmProjects/machine-learning/model/cardio_svm_linear.sav' with Kernel linear created using 30.0% training set size.
+
+Gerando modelo de SVM Kernel Poly
+
+Confusion matrix
+[[6621 3923]
+ [4190 6266]]
+
+Classification report
+              precision    recall  f1-score   support
+
+           N       0.61      0.63      0.62     10544
+           Y       0.61      0.60      0.61     10456
+
+    accuracy                           0.61     21000
+   macro avg       0.61      0.61      0.61     21000
+weighted avg       0.61      0.61      0.61     21000
+
+Model '/Users/fdalcin/PycharmProjects/machine-learning/model/cardio_svm_poly.sav' with Kernel poly created using 30.0% training set size.

@@ -1,9 +1,9 @@
 from MachineLearning import MachineLearning
-from parte_1_slide_30.common import get_inductor_params
+from parte_1_slide_30.preprocessing import get_data
 
 machine_learning = MachineLearning()
 
-attributes, classes = get_inductor_params()
+attributes, classes = get_data()
 
 # LOGISTIC REGRESSION
 filename = 'diabetes_rf'

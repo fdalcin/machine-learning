@@ -2,7 +2,7 @@ import pandas
 import config
 
 
-def get_inductor_params():
+def get_data():
     data = pandas.read_csv(config.DATA_PATH + 'diabetes.csv')
 
     attributes = data.drop('class', axis=1)

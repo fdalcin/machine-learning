@@ -1,8 +1,8 @@
-from trabalho_final.common import get_inductor_params
+from trabalho_final.preprocessing import get_data
 from MachineLearning import MachineLearning
 
 machine_learning = MachineLearning()
-attributes, classes = get_inductor_params()
+attributes, classes = get_data()
 
 # Decision Tree
 print("\nGerando modelo de Decision Tree")

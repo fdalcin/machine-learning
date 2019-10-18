@@ -2,9 +2,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve
 from sklearn.model_selection import cross_validate, cross_val_score
 from sklearn.svm import SVC
+import numpy
 import config
 import joblib
 
@@ -28,6 +29,14 @@ def _confusion_matrix(test, evaluation):
     print(matrix)
 
     return matrix
+
+def _roc_values(testing, evaluation):
+    auc_roc = roc_auc_score(testing, numpy.where(evaluation == 'Y', 1, 0))
+
+    print("\nRoc Score")
+    print(auc_roc)
+
+    return auc_roc
 
 
 def _classification_report(test, evaluation):
@@ -59,6 +68,8 @@ class MachineLearning:
 
         y_evaluation = rf.predict(x_testing)
 
+        _roc_values(y_testing, y_evaluation)
+
         _confusion_matrix(y_testing, y_evaluation)
 
         _classification_report(y_testing, y_evaluation)
@@ -77,6 +88,8 @@ class MachineLearning:
         dt.fit(x_training, y_training)
 
         y_evaluation = dt.predict(x_testing)
+
+        _roc_values(y_testing, y_evaluation)
 
         _confusion_matrix(y_testing, y_evaluation)
 
@@ -97,6 +110,8 @@ class MachineLearning:
 
         y_evaluation = lr.predict(x_testing)
 
+        _roc_values(y_testing, y_evaluation)
+
         _confusion_matrix(y_testing, y_evaluation)
 
         _classification_report(y_testing, y_evaluation)
@@ -115,6 +130,8 @@ class MachineLearning:
         svm.fit(x_training, y_training)
 
         y_evaluation = svm.predict(x_testing)
+
+        _roc_values(y_testing, y_evaluation)
 
         _confusion_matrix(y_testing, y_evaluation)
 

@@ -7,3 +7,4 @@ if not BASE_PATH.endswith('/'):
 
 DATA_PATH = BASE_PATH + 'data/'
 MODEL_PATH = BASE_PATH + 'model/'
+EVALUATE_PATH = BASE_PATH + 'evaluate/'

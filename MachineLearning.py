@@ -61,7 +61,7 @@ def _roc_values(testing, evaluation):
     print("\nRoc Score")
     print(auc_roc)
 
-    return auc_roc
+    return round(auc_roc,2)
 
 
 def _classification_report(test, evaluation):

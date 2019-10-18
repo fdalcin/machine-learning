@@ -78,42 +78,42 @@ json_data['results'].append({
     'roc': auc_roc,
 })
 
-# # SVM kernel linear
-# print("\nGerando modelo de SVM Kernel Linear")
-# response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_linear')
-# print(response)
-# print("\nAcurácia")
-# acc = accuracy(matrix)
-# print(acc)
-# print("\nSensibilidade")
-# sen = sensitivity(matrix)
-# print(sen)
-# print("\nEspecificidade")
-# spe = specificity(matrix)
-# print(spe)
-#
-# json_data['results'].append({
-#     'model': 'cardio_svm_linear',
-#     'inductor': 'SVM Kernel Linear',
-#     'acc': acc,
-#     'sen': sen,
-#     'spe': spe,
-#     'roc': auc_roc,
-# })
-#
-# # SVM kernel poly
-# print("\nGerando modelo de SVM Kernel Poly")
-# response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_poly', kernel='poly')
-# print(response)
-# print("\nAcurácia")
-# acc = accuracy(matrix)
-# print(acc)
-# print("\nSensibilidade")
-# sen = sensitivity(matrix)
-# print(sen)
-# print("\nEspecificidade")
-# spe = specificity(matrix)
-# print(spe)
+# SVM kernel linear
+print("\nGerando modelo de SVM Kernel Linear")
+response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_linear')
+print(response)
+print("\nAcurácia")
+acc = accuracy(matrix)
+print(acc)
+print("\nSensibilidade")
+sen = sensitivity(matrix)
+print(sen)
+print("\nEspecificidade")
+spe = specificity(matrix)
+print(spe)
+
+json_data['results'].append({
+    'model': 'cardio_svm_linear',
+    'inductor': 'SVM Kernel Linear',
+    'acc': acc,
+    'sen': sen,
+    'spe': spe,
+    'roc': auc_roc,
+})
+
+# SVM kernel poly
+print("\nGerando modelo de SVM Kernel Poly")
+response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_poly', kernel='poly')
+print(response)
+print("\nAcurácia")
+acc = accuracy(matrix)
+print(acc)
+print("\nSensibilidade")
+sen = sensitivity(matrix)
+print(sen)
+print("\nEspecificidade")
+spe = specificity(matrix)
+print(spe)
 
 json_data['results'].append({
     'model': 'cardio_svm_poly',

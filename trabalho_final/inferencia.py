@@ -16,3 +16,8 @@ params = [
 print("\nTestando modelo "+name_model)
 response = execute_model(model_exec, params)
 print(response)
+
+# SVM kernel RBF
+print("\nTestando modelo SVM Kernel RBF")
+response = execute_model('cardio_svm_rbf', params)
+print(response)

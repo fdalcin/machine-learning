@@ -1,13 +1,14 @@
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
+import joblib
+import numpy
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
 from sklearn.model_selection import cross_validate, cross_val_score
+from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-import numpy
+from sklearn.tree import DecisionTreeClassifier
+
 import config
-import joblib
 
 
 def execute_model(model_name, params):

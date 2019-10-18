@@ -1,9 +1,18 @@
+import joblib
 import pandas
+from sklearn.preprocessing import MinMaxScaler
+
 import config
 
 
 def to_yes_or_no(value):
     return 'N' if value == 0 else 'Y'
+
+
+def convert_input(attributes):
+    scaling = joblib.load(config.PREPROCESSING_PATH + 'cardio_scaling.sav')
+
+    return scaling.transform(attributes)
 
 
 def get_data():
@@ -24,5 +33,11 @@ def get_data():
 
     attributes = cardio.drop('cardio', axis=1)
     classes = cardio.cardio
+
+    scaling = MinMaxScaler(feature_range=(-1, 1)).fit(attributes)
+
+    attributes = scaling.transform(attributes)
+
+    joblib.dump(scaling, config.PREPROCESSING_PATH + 'cardio_scaling.sav')
 
     return attributes, classes

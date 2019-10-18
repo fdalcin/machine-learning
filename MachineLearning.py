@@ -22,6 +22,30 @@ def probability(model_name, params):
     return model.predict_proba(params)
 
 
+def accuracy(matrix):
+    tp = numpy.diag(matrix)
+    fp = numpy.sum(matrix, axis=0) - tp
+
+    true_positive = numpy.sum(tp)
+    false_positive = numpy.sum(fp)
+
+    return round(true_positive / (true_positive + false_positive), 2)
+
+
+def sensitivity(matrix):
+    true_positive = matrix[0][0]
+    false_negative = matrix[0][1]
+
+    return round(true_positive / (true_positive + false_negative), 2)
+
+
+def specificity(matrix):
+    true_negative = matrix[1][1]
+    false_positive = matrix[1][0]
+
+    return round(true_negative / (true_negative + false_positive), 2)
+
+
 def _confusion_matrix(test, evaluation):
     matrix = confusion_matrix(test, evaluation)
 
@@ -29,6 +53,7 @@ def _confusion_matrix(test, evaluation):
     print(matrix)
 
     return matrix
+
 
 def _roc_values(testing, evaluation):
     auc_roc = roc_auc_score(testing, numpy.where(evaluation == 'Y', 1, 0))
@@ -68,18 +93,18 @@ class MachineLearning:
 
         y_evaluation = rf.predict(x_testing)
 
-        _roc_values(y_testing, y_evaluation)
+        auc_roc = _roc_values(y_testing, y_evaluation)
 
-        _confusion_matrix(y_testing, y_evaluation)
+        matrix = _confusion_matrix(y_testing, y_evaluation)
 
-        _classification_report(y_testing, y_evaluation)
+        report = _classification_report(y_testing, y_evaluation)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' created with {}% training set size."
 
         joblib.dump(rf, filename)
 
-        return message.format(filename, self.test_size * 100)
+        return message.format(filename, self.test_size * 100), auc_roc, matrix, report
 
     def generate_decision_tree(self, attributes, classes, output_filename):
         x_training, x_testing, y_training, y_testing = self._train_test_split(attributes, classes)
@@ -89,18 +114,18 @@ class MachineLearning:
 
         y_evaluation = dt.predict(x_testing)
 
-        _roc_values(y_testing, y_evaluation)
+        auc_roc = _roc_values(y_testing, y_evaluation)
 
-        _confusion_matrix(y_testing, y_evaluation)
+        matrix = _confusion_matrix(y_testing, y_evaluation)
 
-        _classification_report(y_testing, y_evaluation)
+        report = _classification_report(y_testing, y_evaluation)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' created with {}% training set size."
 
         joblib.dump(dt, filename)
 
-        return message.format(filename, self.test_size * 100)
+        return message.format(filename, self.test_size * 100), auc_roc, matrix, report
 
     def generate_logistic_regression(self, attributes, classes, output_filename):
         x_training, x_testing, y_training, y_testing = self._train_test_split(attributes, classes)
@@ -110,18 +135,18 @@ class MachineLearning:
 
         y_evaluation = lr.predict(x_testing)
 
-        _roc_values(y_testing, y_evaluation)
+        auc_roc = _roc_values(y_testing, y_evaluation)
 
-        _confusion_matrix(y_testing, y_evaluation)
+        matrix = _confusion_matrix(y_testing, y_evaluation)
 
-        _classification_report(y_testing, y_evaluation)
+        report = _classification_report(y_testing, y_evaluation)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' created using {} with {}% training set size."
 
         joblib.dump(lr, filename)
 
-        return message.format(filename, self.solver, self.test_size * 100)
+        return message.format(filename, self.solver, self.test_size * 100), auc_roc, matrix, report
 
     def generate_svm(self, attributes, classes, output_filename, kernel='linear'):
         x_training, x_testing, y_training, y_testing = self._train_test_split(attributes, classes)
@@ -131,18 +156,18 @@ class MachineLearning:
 
         y_evaluation = svm.predict(x_testing)
 
-        _roc_values(y_testing, y_evaluation)
+        auc_roc = _roc_values(y_testing, y_evaluation)
 
-        _confusion_matrix(y_testing, y_evaluation)
+        matrix = _confusion_matrix(y_testing, y_evaluation)
 
-        _classification_report(y_testing, y_evaluation)
+        report = _classification_report(y_testing, y_evaluation)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' with Kernel {} created using {}% training set size."
 
         joblib.dump(svm, filename)
 
-        return message.format(filename, kernel, self.test_size * 100)
+        return message.format(filename, kernel, self.test_size * 100), auc_roc, matrix, report
 
     def validate_model(self, model_name, attributes, classes):
         model = joblib.load(config.MODEL_PATH + model_name + '.sav')

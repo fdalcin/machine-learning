@@ -1,30 +1,60 @@
 from trabalho_final.preprocessing import get_data
-from MachineLearning import MachineLearning
+from MachineLearning import MachineLearning, accuracy, sensitivity, specificity
 
 machine_learning = MachineLearning()
 attributes, classes = get_data()
 
 # Decision Tree
 print("\nGerando modelo de Decision Tree")
-response = machine_learning.generate_decision_tree(attributes, classes, 'cardio_dt')
+response, auc_roc, matrix, report = machine_learning.generate_decision_tree(attributes, classes, 'cardio_dt')
 print(response)
+print("\nAcurácia")
+print(accuracy(matrix))
+print("\nSensibilidade")
+print(sensitivity(matrix))
+print("\nEspecificidade")
+print(specificity(matrix))
 
 # Logistic Regression
 print("\nGerando modelo de Logistic Regression")
-response = machine_learning.generate_logistic_regression(attributes, classes, 'cardio_lr')
+response, auc_roc, matrix, report = machine_learning.generate_logistic_regression(attributes, classes, 'cardio_lr')
 print(response)
+print("\nAcurácia")
+print(accuracy(matrix))
+print("\nSensibilidade")
+print(sensitivity(matrix))
+print("\nEspecificidade")
+print(specificity(matrix))
 
 # Random Forest
 print("\nGerando modelo de Random Forest")
-response = machine_learning.generate_random_forest(attributes, classes, 'cardio_rf')
+response, auc_roc, matrix, report = machine_learning.generate_random_forest(attributes, classes, 'cardio_rf')
 print(response)
+print("\nAcurácia")
+print(accuracy(matrix))
+print("\nSensibilidade")
+print(sensitivity(matrix))
+print("\nEspecificidade")
+print(specificity(matrix))
 
 # SVM kernel linear
 print("\nGerando modelo de SVM Kernel Linear")
-response = machine_learning.generate_svm(attributes, classes, 'cardio_svm_linear')
+response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_linear')
 print(response)
+print("\nAcurácia")
+print(accuracy(matrix))
+print("\nSensibilidade")
+print(sensitivity(matrix))
+print("\nEspecificidade")
+print(specificity(matrix))
 
 # SVM kernel poly
 print("\nGerando modelo de SVM Kernel Poly")
-response = machine_learning.generate_svm(attributes, classes, 'cardio_svm_poly', kernel='poly')
+response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_poly', kernel='poly')
 print(response)
+print("\nAcurácia")
+print(accuracy(matrix))
+print("\nSensibilidade")
+print(sensitivity(matrix))
+print("\nEspecificidade")
+print(specificity(matrix))

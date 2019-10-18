@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
 from sklearn.model_selection import cross_validate, cross_val_score
 from sklearn.svm import SVC
 import numpy
@@ -151,7 +151,7 @@ class MachineLearning:
     def generate_svm(self, attributes, classes, output_filename, kernel='linear'):
         x_training, x_testing, y_training, y_testing = self._train_test_split(attributes, classes)
 
-        svm = SVC(gamma='scale', kernel=kernel, probability=True)
+        svm = SVC(gamma='scale', kernel=kernel, cache_size=1000)
         svm.fit(x_training, y_training)
 
         y_evaluation = svm.predict(x_testing)

@@ -33,3 +33,8 @@ print(response)
 print("\nTestando modelo SVM Kernel Poly")
 response = execute_model('cardio_svm_poly', params)
 print(response)
+
+# SVM kernel RBF
+print("\nTestando modelo SVM Kernel RBF")
+response = execute_model('cardio_svm_rbf', params)
+print(response)

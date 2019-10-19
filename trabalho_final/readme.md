@@ -12,4 +12,12 @@
 
 ## Resultados
 
-Work In Progress.
+1. [Cardiovascular Dataset](https://www.kaggle.com/sulianova/cardiovascular-disease-dataset)
+
+2. Aplicação
+
+    2.1
+    
+    2.2
+    
+    2.3

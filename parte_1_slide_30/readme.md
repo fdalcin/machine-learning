@@ -14,27 +14,26 @@ Construir um sistema classificador para os dados do arquivo diabetes.csv
 
 |  |  |
 | :---: | :---: |
-| 114 | 24 |
-| 40 | 53 |
+| 122 | 34 |
+| 37 | 38 |
 
 #### Classification report
 
 |  | precision | recall | f1-score | support |
 | :--- | :---: | :---: | :---: | :---: |
-| tested_negative | 0.74 | 0.83 | 0.78 | 138 |
-| tested_positive | 0.69 | 0.57 | 0.62 | 93 |
+| tested_negative | 0.77 | 0.78 | 0.77 | 156 |
+| tested_positive | 0.53 | 0.51 | 0.52 | 75 |
 | |
-| accuracy |  |  | 0.72 | 231 |
-| macro avg | 0.71 | 0.70 | 0.70 | 231 |
-| weighted avg | 0.72 | 0.72 | 0.72 | 231 |
+| accuracy |  |  | 0.69 | 231 |
+| macro avg | 0.65 | 0.64 | 0.65 | 231 |
+| weighted avg | 0.69 | 0.69 | 0.69 | 231 |
 
-Model score: **93.07%**
-
-Cross validation score  
-Mean precision: **0.683399470899471**
-
-Cross validate score  
-Mean precision: **0.6925264550264552**
+```json
+{
+  'accuracy': 0.6884259259259261, 
+  'auc_roc': 0.667222222222222
+}
+```
 
 ### Random Forest
 
@@ -42,30 +41,29 @@ Mean precision: **0.6925264550264552**
 
 |  |  |
 | :---: | :---: |
-| 126 | 14 |
-| 32 | 58 |
+| 131 | 24 |
+| 38 | 38 |
 
 #### Classification report
 
 |  | precision | recall | f1-score | support |
 | :--- | :---: | :---: | :---: | :---: |
-| tested_negative | 0.80 | 0.89 | 0.84 | 141 |
-| tested_positive | 0.79 | 0.64 | 0.71 | 90 |
+| tested_negative | 0.78 | 0.85 | 0.81 | 155 |
+| tested_positive | 0.61 | 0.50 | 0.55 | 76 |
 | |
-| accuracy |  |  | 0.80 | 231 |
-| macro avg | 0.80 | 0.77 | 0.78 | 231 |
-| weighted avg | 0.80 | 0.80 | 0.79 | 231 |
+| accuracy |  |  | 0.73 | 231 |
+| macro avg | 0.69 | 0.67 | 0.68 | 231 |
+| weighted avg | 0.72 | 0.73 | 0.72 | 231 |
 
-Model score: **93.93%**
-
-Cross validation score  
-Mean precision: **0.728968253968254**
-
-Cross validate score  
-Mean precision: **0.7188492063492065**
+```json
+{
+  'accuracy': 0.7546296296296298, 
+  'auc_roc': 0.7788888888888889
+}
+```
 
 #### Algoritmo selecionado
 Foi selecionado o modelo de **Regressão Logística** apresentado anteriormente - **[parte_1_slide_18](https://github.com/fdalcin/machine-learning/tree/master/parte_1_slide_18)**, uma vez que o mesmo apresentou uma melhor acurácia.
 
 #### Acurácia do modelo
-O modelo de **Regressão Logística** apresentou acurácia de **81%**. 
+O modelo de **Regressão Logística** apresentou acurácia de **82%**. 

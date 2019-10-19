@@ -7,28 +7,13 @@ testing_params = [
     [9.5, 0.72, 0.24, 2.3, 0.07, 21, 47, 0.9962, 3.54, 0.70, 11.3]  # ?
 ]
 
-print("\nCalculando probabilidade SVM Linear")
-response = probability('wines_svm_linear', testing_params)
-
-print(response)
-
 print("\nTestando valores para modelo SVM Linear")
 response = execute_model('wines_svm_linear', testing_params)
 
 print(response)
 
-print("\nCalculando probabilidade SVM RBF")
-response = probability('wines_svm_rbf', testing_params)
-
-print(response)
-
 print("\nTestando valores para modelo SVM RBF")
 response = execute_model('wines_svm_rbf', testing_params)
-
-print(response)
-
-print("\nCalculando probabilidade Random Forest")
-response = probability('wines_rf', testing_params)
 
 print(response)
 

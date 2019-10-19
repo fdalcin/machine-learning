@@ -1,7 +1,7 @@
 import pandas
 import config
 from sklearn.utils import resample
-from MachineLearning import MachineLearning
+from MachineLearning import MachineLearning, validate_model
 
 
 def binary_to_char(value):
@@ -39,14 +39,18 @@ attributes = pandas.get_dummies(attributes)
 # LOGISTIC REGRESSION
 filename = 'orthopedics_lr'
 
+x_training, x_testing, y_training, y_testing = machine_learning.train_test_split(attributes, classes)
+
 # Módulo indutor
 print("\nGerando modelo de Regressão Logística")
-response = machine_learning.generate_logistic_regression(attributes, classes, filename)
+response, matrix = machine_learning.generate_logistic_regression(
+    x_training, x_testing, y_training, y_testing, filename
+)
 
 print(response)
 
 # Módulo de validação
 print("\nValidando modelo de Regressão Logística")
-response = machine_learning.validate_model(filename, attributes, classes)
+response = validate_model(filename, x_testing, y_testing)
 
 print(response)

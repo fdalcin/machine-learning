@@ -8,23 +8,24 @@
 
 |  |  |
 | :---: | :---: |
-| 144 | 19 |
-| 26 | 42 |
+| 142 | 9 |
+| 32 | 48 |
 
 #### Classification report
 
 |  | precision | recall | f1-score | support |
 | :--- | :---: | :---: | :---: | :---: |
-| tested_negative | 0.85 | 0.88 | 0.86 | 163 |
-| tested_positive | 0.69 | 0.62 | 0.65 | 68 |
-| accuracy |  |  | 0.81 | 231 |
-| macro avg | 0.77 | 0.75 | 0.76 | 231 |
-| weighted avg | 0.80 | 0.81 | 0.80 | 231 |
+| tested_negative | 0.82 | 0.94 | 0.87 | 151 |
+| tested_positive | 0.84 | 0.60 | 0.70 | 80 |
+| accuracy |  |  | 0.82 | 231 |
+| macro avg | 0.83 | 0.77 | 0.79 | 231 |
+| weighted avg | 0.83 | 0.82 | 0.81 | 231 |
 
-Model score: **77.06%**
+cross_val_score
+```json
+{
+  'accuracy': 0.7927248677248678, 
+  'auc_roc': 0.8292592592592594
+}
+```
 
-Cross validation score  
-Mean precision: **0.7579365079365081**
-
-Cross validate score  
-Mean precision: **0.7579365079365081**

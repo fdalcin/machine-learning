@@ -1,7 +1,7 @@
 import pandas
 import config
 from sklearn.utils import resample
-from MachineLearning import MachineLearning
+from MachineLearning import MachineLearning, validate_model
 
 
 def binary_to_char(value):
@@ -36,17 +36,21 @@ data = minor = major = minor_up_sample = balanced_data = None
 
 attributes = pandas.get_dummies(attributes)
 
+x_training, x_testing, y_training, y_testing = machine_learning.train_test_split(attributes, classes)
+
 # LOGISTIC REGRESSION
 filename = 'orthopedics_dt'
 
 # Módulo indutor
 print("\nGerando modelo de Regressão Logística")
-response = machine_learning.generate_decision_tree(attributes, classes, filename)
+response, matrix = machine_learning.generate_decision_tree(
+    x_training, x_testing, y_training, y_testing, filename
+)
 
 print(response)
 
 # Módulo de validação
 print("\nValidando modelo de Regressão Logística")
-response = machine_learning.validate_model(filename, attributes, classes)
+response = validate_model(filename, x_testing, y_testing)
 
 print(response)

@@ -1,30 +1,40 @@
 from trabalho_final.preprocessing import get_data
-from MachineLearning import MachineLearning, accuracy, sensitivity, specificity
+from MachineLearning import MachineLearning, accuracy, sensitivity, specificity, validate_model
 import json
 import config
 
 machine_learning = MachineLearning()
 attributes, classes = get_data()
+x_training, x_testing, y_training, y_testing = machine_learning.train_test_split(attributes, classes)
 
-json_data = {}
-json_data['results'] = []
+json_data = {'results': []}
 
 # Decision Tree
 print("\nGerando modelo de Decision Tree")
-response, auc_roc, matrix, report = machine_learning.generate_decision_tree(attributes, classes, 'cardio_dt')
+filename = 'cardio_dt'
+response, matrix, auc_roc = machine_learning.generate_decision_tree(
+    x_training, x_testing, y_training, y_testing, filename
+)
 print(response)
+
 print("\nAcurácia")
 acc = accuracy(matrix)
 print(acc)
+
 print("\nSensibilidade")
 sen = sensitivity(matrix)
 print(sen)
+
 print("\nEspecificidade")
 spe = specificity(matrix)
 print(spe)
 
+# print("\nValidação")
+# validate = validate_model(filename, x_testing, y_testing)
+# print(validate)
+
 json_data['results'].append({
-    'model': 'cardio_dt',
+    'model': filename,
     'inductor': 'Decision Tree',
     'acc': acc,
     'sen': sen,
@@ -32,22 +42,33 @@ json_data['results'].append({
     'roc': auc_roc,
 })
 
+
 # Logistic Regression
 print("\nGerando modelo de Logistic Regression")
-response, auc_roc, matrix, report = machine_learning.generate_logistic_regression(attributes, classes, 'cardio_lr')
+filename = 'cardio_lr'
+response, matrix, auc_roc = machine_learning.generate_logistic_regression(
+    x_training, x_testing, y_training, y_testing, filename
+)
 print(response)
+
 print("\nAcurácia")
 acc = accuracy(matrix)
 print(acc)
+
 print("\nSensibilidade")
 sen = sensitivity(matrix)
 print(sen)
+
 print("\nEspecificidade")
 spe = specificity(matrix)
 print(spe)
 
+# print("\nValidação")
+# validate = validate_model(filename, x_testing, y_testing)
+# print(validate)
+
 json_data['results'].append({
-    'model': 'cardio_lr',
+    'model': filename,
     'inductor': 'Logistic Regression',
     'acc': acc,
     'sen': sen,
@@ -55,22 +76,33 @@ json_data['results'].append({
     'roc': auc_roc,
 })
 
+
 # Random Forest
 print("\nGerando modelo de Random Forest")
-response, auc_roc, matrix, report = machine_learning.generate_random_forest(attributes, classes, 'cardio_rf')
+filename = 'cardio_rf'
+response, matrix, auc_roc = machine_learning.generate_random_forest(
+    x_training, x_testing, y_training, y_testing, filename
+)
 print(response)
+
 print("\nAcurácia")
 acc = accuracy(matrix)
 print(acc)
+
 print("\nSensibilidade")
 sen = sensitivity(matrix)
 print(sen)
+
 print("\nEspecificidade")
 spe = specificity(matrix)
 print(spe)
 
+# print("\nValidação")
+# validate = validate_model(filename, x_testing, y_testing)
+# print(validate)
+
 json_data['results'].append({
-    'model': 'cardio_rf',
+    'model': filename,
     'inductor': 'Random Forest',
     'acc': acc,
     'sen': sen,
@@ -78,22 +110,33 @@ json_data['results'].append({
     'roc': auc_roc,
 })
 
+
 # SVM kernel linear
 print("\nGerando modelo de SVM Kernel Linear")
-response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_linear')
+filename = 'cardio_svm_linear'
+response, matrix, auc_roc = machine_learning.generate_svm(
+    x_training, x_testing, y_training, y_testing, filename
+)
 print(response)
+
 print("\nAcurácia")
 acc = accuracy(matrix)
 print(acc)
+
 print("\nSensibilidade")
 sen = sensitivity(matrix)
 print(sen)
+
 print("\nEspecificidade")
 spe = specificity(matrix)
 print(spe)
 
+# print("\nValidação")
+# validate = validate_model(filename, x_testing, y_testing)
+# print(validate)
+
 json_data['results'].append({
-    'model': 'cardio_svm_linear',
+    'model': filename,
     'inductor': 'SVM Kernel Linear',
     'acc': acc,
     'sen': sen,
@@ -101,28 +144,74 @@ json_data['results'].append({
     'roc': auc_roc,
 })
 
+
 # SVM kernel poly
 print("\nGerando modelo de SVM Kernel Poly")
-response, auc_roc, matrix, report = machine_learning.generate_svm(attributes, classes, 'cardio_svm_poly', kernel='poly')
+filename = 'cardio_svm_poly'
+response, matrix, auc_roc = machine_learning.generate_svm(
+    x_training, x_testing, y_training, y_testing, filename, kernel='poly'
+)
 print(response)
+
 print("\nAcurácia")
 acc = accuracy(matrix)
 print(acc)
+
 print("\nSensibilidade")
 sen = sensitivity(matrix)
 print(sen)
+
 print("\nEspecificidade")
 spe = specificity(matrix)
 print(spe)
 
+# print("\nValidação")
+# validate = validate_model(filename, x_testing, y_testing)
+# print(validate)
+
 json_data['results'].append({
-    'model': 'cardio_svm_poly',
+    'model': filename,
     'inductor': 'SVM Kernel Poly',
     'acc': acc,
     'sen': sen,
     'spe': spe,
     'roc': auc_roc,
 })
+
+
+# SVM kernel RBF
+print("\nGerando modelo de SVM Kernel RBF")
+filename = 'cardio_svm_rbf'
+response, matrix, auc_roc = machine_learning.generate_svm(
+    x_training, x_testing, y_training, y_testing, filename, kernel='rbf'
+)
+print(response)
+
+print("\nAcurácia")
+acc = accuracy(matrix)
+print(acc)
+
+print("\nSensibilidade")
+sen = sensitivity(matrix)
+print(sen)
+
+print("\nEspecificidade")
+spe = specificity(matrix)
+print(spe)
+
+# print("\nValidação")
+# validate = validate_model(filename, x_testing, y_testing)
+# print(validate)
+
+json_data['results'].append({
+    'model': filename,
+    'inductor': 'SVM Kernel RBF',
+    'acc': acc,
+    'sen': sen,
+    'spe': spe,
+    'roc': auc_roc,
+})
+
 
 filename = config.EVALUATE_PATH + 'results.json'
 with open(filename, 'w') as outfile:

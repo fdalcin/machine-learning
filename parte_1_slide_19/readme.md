@@ -15,22 +15,22 @@ Portanto, trata-se de um tratamento caro e de longo prazo e prever o risco de re
 #### Confusion matrix
 |  |  |
 | :---: | :---: |
-| 2323 | 73 |
-| 0 | 2369 |
+| 2327 | 75 |
+| 0 | 2363 |
 
 #### Classification report
 |  | precision | recall | f1-score | support |
 | :--- | :---: | :---: | :---: | :---: |
-| N | 1.00 | 0.97 | 0.99 | 2396 |
-| Y |  0.97 | 1.00 | 0.98 | 2369 |
+| N | 1.00 | 0.97 | 0.98 | 2402 |
+| Y |  0.97 | 1.00 | 0.98 | 2363 |
 | accuracy |  |  | 0.98 | 4765 |
-| macro avg | 0.99 | 0.98 | 0.98 | 4765 |
-| weighted avg | 0.99 | 0.98 | 0.98 | 4765 |
+| macro avg | 0.98 | 0.98 | 0.98 | 4765 |
+| weighted avg | 0.98 | 0.98 | 0.98 | 4765 |
 
-Model score: **98.70%**
-
-Cross validation score  
-Mean precision: **0.9855198464824988**
-
-Cross validate score  
-Mean precision: **0.9855198464824988**
+cross_val_score
+```json
+{
+  'accuracy': 0.9842646717352656, 
+  'auc_roc': 0.9949060074490805
+}
+```

@@ -47,19 +47,19 @@ def accuracy(matrix):
     true_positive = numpy.sum(tp)
     false_positive = numpy.sum(fp)
 
-    return round(true_positive / (true_positive + false_positive), 2)
+    return true_positive / (true_positive + false_positive)
 
 
 def sensitivity(matrix):
-    true_positive = matrix[0][0]
-    false_negative = matrix[0][1]
+    true_positive = matrix[1][1]
+    false_negative = matrix[1][0]
 
     return true_positive / (true_positive + false_negative)
 
 
 def specificity(matrix):
-    true_negative = matrix[1][1]
-    false_positive = matrix[1][0]
+    true_negative = matrix[0][0]
+    false_positive = matrix[0][1]
 
     return true_negative / (true_negative + false_positive)
 

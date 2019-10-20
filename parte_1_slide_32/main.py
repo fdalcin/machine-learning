@@ -1,4 +1,4 @@
-from MachineLearning import execute_model, probability
+import MachineLearning
 
 testing_params = [
     [6.7, 0.76, 0.02, 1.8, 0.078, 6, 12, 0.996, 3.55, 0.63, 9.95],  # C_WINE
@@ -8,16 +8,16 @@ testing_params = [
 ]
 
 print("\nTestando valores para modelo SVM Linear")
-response = execute_model('wines_svm_linear', testing_params)
+response = MachineLearning.execute_model('wines_svm_linear', testing_params)
 
 print(response)
 
 print("\nTestando valores para modelo SVM RBF")
-response = execute_model('wines_svm_rbf', testing_params)
+response = MachineLearning.execute_model('wines_svm_rbf', testing_params)
 
 print(response)
 
 print("\nTestando valores para modelo Random Forest")
-response = execute_model('wines_rf', testing_params)
+response = MachineLearning.execute_model('wines_rf', testing_params)
 
 print(response)

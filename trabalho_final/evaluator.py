@@ -1,3 +1,4 @@
+from pandas.io.json import json_normalize
 import json
 import config
 
@@ -9,12 +10,8 @@ def evaluate_best_model():
     with open(filename) as json_file:
         data = json.load(json_file)
 
-        for result in data['results']:
-            score = result['acc'] + result['sen'] + result['spe'] + result['roc']
+        results = json_normalize(data['results'])
+        results = results.sort_values(['acc', 'roc', 'sen', 'spe'], ascending=False)
+        best_models = results[:2]
 
-            if score > best_score:
-                best_score = score
-                model = result['model']
-                inductor = result['inductor']
-
-    return model, inductor
+    return best_models.values

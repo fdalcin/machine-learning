@@ -1,14 +1,14 @@
 import pandas
 import config
 from sklearn.utils import resample
-from MachineLearning import MachineLearning, validate_model
+import MachineLearning
 
 
 def binary_to_char(value):
     return 'N' if value == 0 else 'Y'
 
 
-machine_learning = MachineLearning()
+ml = MachineLearning.MachineLearning()
 
 data = pandas.read_csv(config.DATA_PATH + 'ortopedia.csv', sep=';')
 
@@ -36,21 +36,35 @@ data = minor = major = minor_up_sample = balanced_data = None
 
 attributes = pandas.get_dummies(attributes)
 
-x_training, x_testing, y_training, y_testing = machine_learning.train_test_split(attributes, classes)
+x_training, x_testing, y_training, y_testing = ml.train_test_split(attributes, classes)
 
 # LOGISTIC REGRESSION
 filename = 'orthopedics_dt'
 
 # Módulo indutor
 print("\nGerando modelo de Regressão Logística")
-response, matrix = machine_learning.generate_decision_tree(
-    x_training, x_testing, y_training, y_testing, filename
+response, y_predict = ml.generate_decision_tree(
+    x_training, x_testing, y_training, filename
 )
 
 print(response)
 
-# Módulo de validação
-print("\nValidando modelo de Regressão Logística")
-response = validate_model(filename, x_testing, y_testing)
+matrix = MachineLearning.conf_matrix(y_testing, y_predict)
 
-print(response)
+MachineLearning.report(y_testing, y_predict)
+
+print("\nAcurácia")
+acc = MachineLearning.accuracy(matrix)
+print(acc)
+
+print("\nSensibilidade")
+sen = MachineLearning.sensitivity(matrix)
+print(sen)
+
+print("\nEspecificidade")
+spe = MachineLearning.specificity(matrix)
+print(spe)
+
+print("\nValidando modelo")
+validate = MachineLearning.validate_model(filename, x_testing, y_testing)
+print(validate)

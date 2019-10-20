@@ -27,24 +27,24 @@ Accuracy **1.00**
 Foi utilizado o modelo de **Decision Tree**
 
 #### Sensibilidade
-2338 / (2338 + 15) = **0.9936** = **99.36%**
+2408 / (2408 + 9) = **0.9962** = **99.62%**
 
 #### Especificidade
-2412 / (2412 + 0) = **1.00** = **100%**
+2348 / (2348 + 0) = **1.00** = **100%**
 
 #### Acurácia do modelo de função logística
-Accuracy **0.98**  
+Accuracy **0.99**  
 
 #### Confusion Matrix
 
 ##### Logistic Regression
 |  |  |
 | :---: | :---: |
-| 2327 | 75 |
-| 0 | 2363 |
+| 2394 | 63 |
+| 0 | 2308 |
 
 ##### Decision Tree
 |  |  |
 | :---: | :---: |
-| 2338 | 15 |
-| 0 | 2412 |
+| 2408 | 9 |
+| 0 | 2348 |

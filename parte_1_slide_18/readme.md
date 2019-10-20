@@ -8,24 +8,24 @@
 
 |  |  |
 | :---: | :---: |
-| 142 | 9 |
-| 32 | 48 |
+| 143 | 17 |
+| 29 | 42 |
 
 #### Classification report
 
 |  | precision | recall | f1-score | support |
 | :--- | :---: | :---: | :---: | :---: |
-| tested_negative | 0.82 | 0.94 | 0.87 | 151 |
-| tested_positive | 0.84 | 0.60 | 0.70 | 80 |
-| accuracy |  |  | 0.82 | 231 |
-| macro avg | 0.83 | 0.77 | 0.79 | 231 |
-| weighted avg | 0.83 | 0.82 | 0.81 | 231 |
+| tested_negative | 0.83 | 0.89 | 0.86 | 160 |
+| tested_positive | 0.71 | 0.59 | 0.65 | 71 |
+| accuracy |  |  | 0.80 | 231 |
+| macro avg | 0.77 | 0.74 | 0.75 | 231 |
+| weighted avg | 0.79 | 0.80 | 0.80 | 231 |
 
 cross_val_score
 ```json
 {
-  'accuracy': 0.7927248677248678, 
-  'auc_roc': 0.8292592592592594
+  'accuracy': 0.7706521739130434, 
+  'auc_roc': 0.7887784002489886
 }
 ```
 

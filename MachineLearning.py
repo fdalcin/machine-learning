@@ -3,8 +3,7 @@ import numpy
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score, train_test_split, KFold
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
@@ -25,15 +24,16 @@ def probability(model_name, params):
 
 def validate_model(model_name, x_testing, y_testing, categorical=False):
     model = joblib.load(config.MODEL_PATH + model_name + '.sav')
+    kfold = KFold(n_splits=10, random_state=100)
 
-    acc = cross_val_score(model, x_testing, y_testing, cv=30, scoring='accuracy')
+    acc = cross_val_score(model, x_testing, y_testing, cv=kfold, scoring='accuracy')
 
     response = dict()
 
     response['accuracy'] = acc.mean()
 
     if not categorical:
-        roc = cross_val_score(model, x_testing, y_testing, cv=30, scoring='roc_auc')
+        roc = cross_val_score(model, x_testing, y_testing, cv=kfold, scoring='roc_auc')
 
         response['auc_roc'] = roc.mean()
 
@@ -64,7 +64,14 @@ def specificity(matrix):
     return true_negative / (true_negative + false_positive)
 
 
-def _confusion_matrix(y_testing, y_predict):
+def auc_roc(y_testing, y_predict):
+    return roc_auc_score(
+        numpy.where(y_testing == 'Y', 1, 0),
+        numpy.where(y_predict == 'Y', 1, 0)
+    )
+
+
+def conf_matrix(y_testing, y_predict):
     matrix = confusion_matrix(y_testing, y_predict)
 
     print("\nConfusion matrix")
@@ -73,22 +80,13 @@ def _confusion_matrix(y_testing, y_predict):
     return matrix
 
 
-def _classification_report(y_testing, y_predict):
-    report = classification_report(y_testing, y_predict)
+def report(y_testing, y_predict):
+    r = classification_report(y_testing, y_predict)
 
     print("\nClassification report")
-    print(report)
+    print(r)
 
-    return report
-
-
-def _roc_values(y_testing, y_predict):
-    auc_roc = roc_auc_score(y_testing, numpy.where(y_predict == 'Y', 1, 0))
-
-    print("\nRoc Score")
-    print(auc_roc)
-
-    return auc_roc
+    return r
 
 
 class MachineLearning:
@@ -103,78 +101,54 @@ class MachineLearning:
 
         return x_training, x_testing, y_training, y_testing
 
-    def generate_random_forest(self, x_training, x_testing, y_training, y_testing, output_filename):
+    def generate_random_forest(self, x_training, x_testing, y_training, output_filename):
         rf = RandomForestClassifier(n_estimators=100)
         rf.fit(x_training, y_training)
 
         y_predict = rf.predict(x_testing)
-
-        auc_roc = _roc_values(y_testing, y_predict)
-
-        matrix = _confusion_matrix(y_testing, y_predict)
-
-        _classification_report(y_testing, y_predict)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' created with {}% training set size."
 
         joblib.dump(rf, filename)
 
-        return message.format(filename, self.test_size * 100), matrix, auc_roc
+        return message.format(filename, self.test_size * 100), y_predict
 
-    def generate_decision_tree(self, x_training, x_testing, y_training, y_testing, output_filename):
+    def generate_decision_tree(self, x_training, x_testing, y_training, output_filename):
         dt = DecisionTreeClassifier()
         dt.fit(x_training, y_training)
 
         y_predict = dt.predict(x_testing)
-
-        auc_roc = _roc_values(y_testing, y_predict)
-
-        matrix = _confusion_matrix(y_testing, y_predict)
-
-        _classification_report(y_testing, y_predict)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' created with {}% training set size."
 
         joblib.dump(dt, filename)
 
-        return message.format(filename, self.test_size * 100), matrix, auc_roc
+        return message.format(filename, self.test_size * 100), y_predict
 
-    def generate_logistic_regression(self, x_training, x_testing, y_training, y_testing, output_filename):
+    def generate_logistic_regression(self, x_training, x_testing, y_training, output_filename):
         lr = LogisticRegression(solver=self.solver)
         lr.fit(x_training, y_training)
 
         y_predict = lr.predict(x_testing)
-
-        auc_roc = _roc_values(y_testing, y_predict)
-
-        matrix = _confusion_matrix(y_testing, y_predict)
-
-        _classification_report(y_testing, y_predict)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' created using {} with {}% training set size."
 
         joblib.dump(lr, filename)
 
-        return message.format(filename, self.solver, self.test_size * 100), matrix, auc_roc
+        return message.format(filename, self.solver, self.test_size * 100), y_predict
 
-    def generate_svm(self, x_training, x_testing, y_training, y_testing, output_filename, kernel='linear'):
+    def generate_svm(self, x_training, x_testing, y_training, output_filename, kernel='linear'):
         svm = SVC(gamma='scale', kernel=kernel, cache_size=1000)
         svm.fit(x_training, y_training)
 
         y_predict = svm.predict(x_testing)
-
-        auc_roc = _roc_values(y_testing, y_predict)
-
-        matrix = _confusion_matrix(y_testing, y_predict)
-
-        _classification_report(y_testing, y_predict)
 
         filename = config.MODEL_PATH + output_filename + '.sav'
         message = "Model '{}' with Kernel {} created using {}% training set size."
 
         joblib.dump(svm, filename)
 
-        return message.format(filename, kernel, self.test_size * 100), matrix, auc_roc
+        return message.format(filename, kernel, self.test_size * 100), y_predict

@@ -1,25 +1,39 @@
-from MachineLearning import MachineLearning, validate_model
+import MachineLearning
 
 from parte_1_slide_32.preprocessing import get_data
 
-machine_learning = MachineLearning()
+ml = MachineLearning.MachineLearning()
 
 attributes, classes = get_data()
 
 filename = 'wines_svm_linear'
 
-x_training, x_testing, y_training, y_testing = machine_learning.train_test_split(attributes, classes)
+x_training, x_testing, y_training, y_testing = ml.train_test_split(attributes, classes)
 
 # Módulo indutor
 print("\nGerando modelo SVM Linear")
-response, matrix = machine_learning.generate_svm(
-    x_training, x_testing, y_training, y_testing, filename
+response, y_predict = ml.generate_svm(
+    x_training, x_testing, y_training, filename
 )
 
 print(response)
 
-# Módulo de validação
-print("\nValidando modelo de SVM Linear")
-response = validate_model(filename, x_testing, y_testing, categorical=True)
+matrix = MachineLearning.conf_matrix(y_testing, y_predict)
 
-print(response)
+MachineLearning.report(y_testing, y_predict)
+
+print("\nAcurácia")
+acc = MachineLearning.accuracy(matrix)
+print(acc)
+
+print("\nSensibilidade")
+sen = MachineLearning.sensitivity(matrix)
+print(sen)
+
+print("\nEspecificidade")
+spe = MachineLearning.specificity(matrix)
+print(spe)
+
+print("\nValidando modelo")
+validate = MachineLearning.validate_model(filename, x_testing, y_testing, categorical=True)
+print(validate)
